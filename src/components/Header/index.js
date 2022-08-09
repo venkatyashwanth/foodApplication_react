@@ -18,7 +18,10 @@ const Header = () => {
         </HeaderLogo>
 
         <AppsListContainer>
-          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <AppListItems>Popular Recipes</AppListItems>
+          </Link>
+          <Link to="/GetRecipes" style={{ textDecoration: "none", color: "black" }}>
             <AppListItems>Get Recipes</AppListItems>
           </Link>
           <Link
