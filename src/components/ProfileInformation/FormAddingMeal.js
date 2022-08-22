@@ -69,7 +69,7 @@ const FormAddingMeal = () => {
     <>
       <form onSubmit={handleData}>
         <AddMealContainer>
-          <h2 style={{textAlign: 'center'}}>Add Your Meal Plan</h2>
+          <h2>Add Your Meal Plan</h2>
           <div>
             <label htmlFor="dateInput">Enter Date: </label>
             <InputBox type="date" name="date" onChange={handleInfo} />

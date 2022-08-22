@@ -14,6 +14,7 @@ import ProfileLog from "./components/ProfileLog";
 import ProfileInformation from "./components/ProfileInformation";
 import FormAddingMeal from "./components/ProfileInformation/FormAddingMeal";
 import FormGetMeal from "./components/ProfileInformation/FormGetMeal";
+import FormDeleteMeal from "./components/ProfileInformation/FormDeleteMeal";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 
@@ -53,6 +54,8 @@ function App() {
           >
             <Route path="addmealitem" element={<FormAddingMeal />}></Route>
             <Route path="getmealitem" element={<FormGetMeal />}></Route>
+            <Route path="deletemealitem" element={<FormDeleteMeal />}></Route>
+
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

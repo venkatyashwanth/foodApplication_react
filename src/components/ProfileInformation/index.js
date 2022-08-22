@@ -16,16 +16,17 @@ const ProfileInformation = () => {
   return (
     <>
       <ProfileInfoCard>
-        {/* <button onClick={navigateToProfiles}>Profiles</button>
-        <button onClick={getStoredData}>Development</button> */}
         <SideWindow>
           <h2>Welcome {username}...</h2>
           <LinkList>
             <li>
-              <Link to="addmealitem" style={{textDecoration: "none", color: 'black'}}>Add Meal Item</Link>
+              <Link to="addmealitem" style={{textDecoration: "none", color: 'black'}}>Add Meal</Link>
             </li>
             <li>
-              <Link to="getmealitem" style={{textDecoration: "none", color: 'black'}}>Get Meal Item</Link>
+              <Link to="getmealitem" style={{textDecoration: "none", color: 'black'}}>Get Meal Plan - Day</Link>
+            </li>
+            <li>
+              <Link to="deletemealitem" style={{textDecoration: "none", color: 'black'}}>Delete Meal For Day</Link>
             </li>
             <li>
               <Link to="/ProfilePage" style={{textDecoration: "none", color: 'red'}}>Profiles Page</Link>

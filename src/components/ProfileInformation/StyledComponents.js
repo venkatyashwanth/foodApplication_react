@@ -19,6 +19,7 @@ export const InputBox = styled.input`
   margin: 10px 0px;
   border-radius: 5px;
   border: 1px solid black;
+  cursor: pointer;
 `;
 
 export const SelectBox = styled.select`
