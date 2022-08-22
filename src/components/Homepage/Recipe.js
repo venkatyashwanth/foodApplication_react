@@ -7,6 +7,7 @@ import React from "react";
 function Recipe() {
   let params = useParams();
   const [details, setDetails] = useState({});
+  const [tasteInfo, setTasteInfo] = useState({});
   const [activeTab, setActiveTab] = useState("instructions");
 
   const fetchDetails = async () => {
@@ -15,11 +16,23 @@ function Recipe() {
     );
     const detailData = await data.json();
     setDetails(detailData);
+
+    const tasteData = await fetch(
+      `https://api.spoonacular.com/recipes/${params.name}/tasteWidget.json?apiKey=${process.env.REACT_APP_API_KEY}`
+    );
+    const tasteDetailData = await tasteData.json();
+    setTasteInfo(tasteDetailData);
   };
 
   useEffect(() => {
     fetchDetails();
   }, [params.name]);
+
+  const renderTasteList = () => {
+    return Object.keys(tasteInfo).map((obj,i)=>
+      <p>{obj}: {tasteInfo[obj]}</p>
+    )
+  }
 
   return (
     <DetailWrapper>
@@ -40,6 +53,12 @@ function Recipe() {
         >
           Ingredients
         </Button>
+        <Button
+          className={activeTab === "taste" ? "active" : ""}
+          onClick={() => setActiveTab("taste")}
+        >
+          Taste
+        </Button>
         {activeTab === "instructions" && (
           <div>
             <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
@@ -53,6 +72,7 @@ function Recipe() {
             ))}
           </ul>
         )}
+        {activeTab === "taste" && renderTasteList()}
       </Info>
     </DetailWrapper>
   );
@@ -82,6 +102,7 @@ const Button = styled.button`
   background: white;
   border: 2px solid black;
   margin-right: 2rem;
+  margin-top: 1rem;
   font-weight: 600;
   cursor: pointer;
 `;
