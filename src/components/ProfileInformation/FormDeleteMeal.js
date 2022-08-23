@@ -48,7 +48,7 @@ const FormDeleteMeal = () => {
     <AddMealContainer>
       <form onSubmit={submitDeleteDate}>
         <h2>Delete Meal For Specific Day</h2>
-        <div>
+        <div style={{display: "flex", flexDirection: "column"}}>
           <label htmlFor="getDate">Enter Date: </label>
           <InputBox type="date" id="getDate" name="deleteDate" onChange={getDeletedDate}/>
         </div>

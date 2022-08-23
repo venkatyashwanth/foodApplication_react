@@ -58,8 +58,8 @@ const FormGetMeal = () => {
       <AddMealContainer>
         {/* Form for  getting user specific info */}
         <form onSubmit={handleDateInfo}>
-          <h2>Get Your Meal Plan</h2>
-          <div>
+          <h2>Get Meal Plan Per Day</h2>
+          <div style={{display: "flex", flexDirection: "column"}}>
             <label htmlFor="getDate">Enter Scheduled Date: </label>
             <InputBox
               type="date"
@@ -77,6 +77,8 @@ const FormGetMeal = () => {
                 key={data.id}
                 mealData={data}
                 username={params.username}
+                updateMeals = {getMealPlanForUser}
+                date = {infoDate.schDate}
               />
             ))}
           {errorMsg && <p>{errorMsg}</p>}

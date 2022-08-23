@@ -15,6 +15,10 @@ import ProfileInformation from "./components/ProfileInformation";
 import FormAddingMeal from "./components/ProfileInformation/FormAddingMeal";
 import FormGetMeal from "./components/ProfileInformation/FormGetMeal";
 import FormDeleteMeal from "./components/ProfileInformation/FormDeleteMeal";
+import GetMealsWeek from "./components/ProfileInformation/GetMealsWeek";
+import GetWines from "./components/GetWines";
+import WhiteWine from "./components/GetWines/WhiteWine";
+import OtherWhiteWine from "./components/GetWines/OtherWhiteWine";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 
@@ -35,6 +39,10 @@ function App() {
             element={<GetIndividualRecipe />}
           />
           <Route path="/mealPlan" element={<MealPlanner />} />
+          <Route path="/wines" element={<GetWines />}>
+            <Route path="drywhitewine" element={<WhiteWine />}></Route>
+            <Route path="otherwhitewine" element={<OtherWhiteWine />}></Route>
+          </Route>
           <Route path="/MealPlanCode" exact element={<MealPlanCode />} />
           <Route path="/ProfilePage" exact element={<ProfilesPage />} />
           <Route
@@ -55,7 +63,7 @@ function App() {
             <Route path="addmealitem" element={<FormAddingMeal />}></Route>
             <Route path="getmealitem" element={<FormGetMeal />}></Route>
             <Route path="deletemealitem" element={<FormDeleteMeal />}></Route>
-
+            <Route path="getMealsWeek" element={<GetMealsWeek />}></Route>
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

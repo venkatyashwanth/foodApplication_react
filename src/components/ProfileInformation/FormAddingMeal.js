@@ -51,7 +51,6 @@ const FormAddingMeal = () => {
 
   const handleInfo = (event) => {
     let { name, value } = event.target;
-    console.log(name, value);
     if (name === "date") {
       let datum = Date.parse(value);
       value = datum / 1000;
@@ -70,11 +69,11 @@ const FormAddingMeal = () => {
       <form onSubmit={handleData}>
         <AddMealContainer>
           <h2>Add Your Meal Plan</h2>
-          <div>
+          <div style={{display: "flex", flexDirection: "column"}}>
             <label htmlFor="dateInput">Enter Date: </label>
             <InputBox type="date" name="date" onChange={handleInfo} />
           </div>
-          <div>
+          <div style={{display: "flex", flexDirection: "column"}}>
             <label htmlFor="slot">Choose a slot:</label>
             <SelectBox
               name="slot"
@@ -96,7 +95,7 @@ const FormAddingMeal = () => {
               </option>
             </SelectBox>
           </div>
-          <div>
+          <div style={{display: "flex", flexDirection: "column"}}>
             <label htmlFor="title">Recipe title: </label>
             <InputBox
               type="text"
@@ -105,7 +104,7 @@ const FormAddingMeal = () => {
               onChange={handleInfo}
             />
           </div>
-          <div>
+          <div style={{display: "flex", flexDirection: "column"}}>
             <label htmlFor="servings">No.of Servings: </label>
             <InputBox
               type="number"

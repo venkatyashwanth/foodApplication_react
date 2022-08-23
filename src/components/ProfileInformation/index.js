@@ -26,6 +26,9 @@ const ProfileInformation = () => {
               <Link to="getmealitem" style={{textDecoration: "none", color: 'black'}}>Get Meal Plan - Day</Link>
             </li>
             <li>
+              <Link to="getMealsWeek" style={{textDecoration: "none", color: 'black'}}>Get Meal Plan - Week</Link>
+            </li>
+            <li>
               <Link to="deletemealitem" style={{textDecoration: "none", color: 'black'}}>Delete Meal For Day</Link>
             </li>
             <li>

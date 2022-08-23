@@ -23,7 +23,7 @@ const MealInfo = styled.div`
 `;
 
 const MealCard = (props) => {
-  const { mealData,username } = props;
+  const { mealData,username, updateMeals, date } = props;
 
   let value = mealData.slot;
 
@@ -58,10 +58,20 @@ const MealCard = (props) => {
       },
     };
 
-    fetch(url, options)
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((e) => console.log(e));
+    const doNetworkCall = async () => {
+      try {
+        const response = await fetch(url, options);
+        const jsonData = await response.json();
+        console.log(jsonData)
+      } catch (error) {
+        console.log(error);
+      }
+
+      updateMeals(date);
+    };
+    doNetworkCall()
+
+      
   };
 
   return (

@@ -11,10 +11,10 @@ export const ProfileInfoCard = styled.div`
   display: flex;
   // flex-direction: column;
   // align-items: center;
-  height: 65vh;
+  min-height: 65vh;
 `;
 export const InputBox = styled.input`
-  width: 100%;
+  width: 400px;
   padding: 5px 5px;
   margin: 10px 0px;
   border-radius: 5px;
@@ -23,7 +23,7 @@ export const InputBox = styled.input`
 `;
 
 export const SelectBox = styled.select`
-width: 100%;
+width:  400px;
   padding: 5px 5px;
   margin: 10px 0px;
   border-radius: 5px;
@@ -41,7 +41,7 @@ export const SideWindow = styled.div`
 export const AddMealContainer = styled.div`
    display: flex;
    flex-direction: column;
-    width: 400px;
+    width: 100%;
     margin-left: 30px;
 `
 

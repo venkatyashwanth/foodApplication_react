@@ -40,6 +40,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-grap: 3rem;
   margin: 0 10%;
+  min-height: 65vh; 
 `;
 
 const Card = styled.div`

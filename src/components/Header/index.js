@@ -34,6 +34,12 @@ const Header = () => {
             <AppListItems>Calorie Recipe</AppListItems>
           </Link>
           <Link
+            to="/wines"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <AppListItems>Wine Items</AppListItems>
+          </Link>
+          <Link
             to="/MealPlanCode"
             style={{ textDecoration: "none", color: "black" }}
           >
